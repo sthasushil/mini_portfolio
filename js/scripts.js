@@ -12,14 +12,18 @@ window.onload = function() {
   var messageIndex = 0;
 
   var getCurrentTime = function() {
-    var date = new Date();
-    var hours =  date.getHours();
-    var minutes =  date.getMinutes();
-    var current = hours + (minutes * .01);
-    if (current >= 5 && current < 19) return 'Have a nice day';
-    if (current >= 19 && current < 22) return 'Have a nice evening';
-    if (current >= 22 || current < 5) return 'Have a good night';
-  }
+	  var date = new Date();
+	  var current = date.getHours();
+	  if (current >= 5 && current < 19) {
+		return 'Have a nice day';
+	  } else if (current >= 19 && current < 22) {
+		return 'Have a nice evening';
+	  } else if (current >= 0 && current < 3) {
+		return 'Have a good night 🦉';
+	  } else {
+		return 'Have a good night';
+	  }
+};
 
   var messages = [
     'Hey there 👋',
