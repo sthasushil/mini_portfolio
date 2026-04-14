@@ -23,13 +23,13 @@ window.onload = function() {
 
   var messages = [
     'Hey there 👋',
-    'I\'m Julian',
-    'I design and code things on the web',
-    'I\'m currently working on <a href="https://github.com/sponsors/juliangarnier" target="_blank">anime.js v4</a>',
-    'You can find me on <a target="_blank" href="https://x.com/juliangarnier">X</a>, <a target="_blank" href="https://bsky.app/profile/julian.gr">Bluesky</a> and <a target="_blank" href="https://github.com/juliangarnier">GitHub</a>',
-    'Or contact me directly at <a href="mailto:hello@julian.gr">hello@julian.gr</a>',
+    'I\'m Sushil',
+    'I\'m Sub-Engineer based in Nepal',
+    'I\'m currently working for <a href="https://palungtarmun.gov.np" target="_blank">GON</a>',
+    'You can find me on <a target="_blank" href="https://www.facebook.com/stha.sucl">Facebook</a>, <a target="_blank" href="https://pixelfed.social/sucl_stha">Pixelfed</a> and <a target="_blank" href="https://github.com/sthasushil">GitHub</a>',
+    'Or contact me directly at <a href="mailto:contact@shresthasushil.info.np">contact@shresthasushil.info.np</a>',
     getCurrentTime(),
-    '~ J.',
+    '~ SS.',
   ]
 
   var getFontSize = function() {
