@@ -1,46 +1,68 @@
 :root {
   font-size: 1.125rem;
-  --bg0: #FFF;
-  --bg1: rgba(206,206,206,.5);
-  --fg0: #000;
-  --fg1: rgba(0,0,0,.5);
-  --a0: #0076FF;
+  
+  /* Catppuccin Mocha - Deeper Dark Palette */
+  --mocha-crust: #11111b;    /* Deepest dark */
+  --mocha-mantle: #181825;   /* Secondary deep dark */
+  --mocha-base: #1e1e2e;     /* Standard dark */
+  --mocha-surface0: #313244;
+  --mocha-text: #cdd6f4;
+  --mocha-subtext0: #a6adc8;
+  --mocha-blue: #89b4fa;
+  --mocha-lavender: #b4befe;
+
+  /* Functional Mapping for a Darker Look */
+  --bg0: var(--mocha-crust);    /* Changed to Crust for maximum darkness */
+  --bg1: var(--mocha-mantle);   /* Bubbles now use Mantle to look 'sunken' */
+  --fg0: var(--mocha-text);
+  --fg1: var(--mocha-subtext0);
+  --a0: var(--mocha-blue);
 }
-@media (prefers-color-scheme: dark) {
+
+/* Light mode fallback (stays as Latte for usability) */
+@media (prefers-color-scheme: light) {
   :root {
-    --bg0: #000;
-    --bg1: rgba(206,206,206,.125);
-    --fg0: #FFF;
-    --fg1: rgba(206,206,206,.5);
-    --a0: #0076FF;
+    --bg0: #eff1f5;
+    --bg1: #e6e9ef;
+    --fg0: #4c4f69;
+    --fg1: #6c6f85;
+    --a0: #1e66f5;
   }
 }
+
+/* Responsive font scaling */
 @media (min-width: 600px) { :root { font-size: 1.5rem; } }
 @media (min-width: 900px) { :root { font-size: 1.75rem; } }
 @media (min-width: 1200px) { :root { font-size: 2rem; } }
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body, html {
   background: var(--bg0);
   color: var(--fg0);
+  scroll-behavior: smooth;
 }
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 100vw;
   min-height: 100dvh;
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
+
 .messages {
   overflow: auto;
   width: 100vw;
   max-height: 100vh;
   padding: 1rem .9rem;
 }
+
 .bubble {
   overflow: hidden;
   display: inline-block;
@@ -51,30 +73,45 @@ body {
   transform-origin: 0 100%;
   vertical-align: middle;
   transition: border-radius .25s ease-out .075s;
+  /* Added a very subtle border for definition in the dark */
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 .bubble.left.cornered {
   border-bottom-left-radius: 0;
 }
+
 .bubble.left {
   background: var(--bg1);
+  color: var(--fg0);
 }
+
 .bubble span {
   display: inline;
 }
+
 .bubble span.message {
-  opacity: 0;
+  opacity: 0; 
   line-height: 1.125;
 }
+
 .bubble a {
   color: var(--a0);
+  text-decoration: none;
 }
+
+.bubble a:hover {
+  text-decoration: underline;
+}
+
 .bubble .loading {
   position: absolute;
   white-space: pre;
   font-size: 1.625rem;
   line-height: 1rem;
 }
+
 .bubble .loading b {
   display: inline-block;
-  color: var(--fg1);
+  color: var(--mocha-lavender);
 }
