@@ -29,7 +29,7 @@ window.onload = function() {
     'Hey there 👋',
     'I\'m Sushil',
     'I\'m Sub-Engineer based in Nepal',
-    'I\'m currently working for <a href="https://palungtarmun.gov.np" target="_blank">GON</a>',
+    'I\'m currently working for <a href="https://palungtarmun.gov.np" target="_blank">Government of Nepal</a>',
     'You can find me on <a target="_blank" href="https://www.facebook.com/stha.sucl">Facebook</a>, <a target="_blank" href="https://pixelfed.social/sucl_stha">Pixelfed</a> and <a target="_blank" href="https://github.com/sthasushil">GitHub</a>',
     'Or contact me directly at <a href="mailto:contact@shresthasushil.info.np">contact@shresthasushil.info.np</a>',
     getCurrentTime(),
